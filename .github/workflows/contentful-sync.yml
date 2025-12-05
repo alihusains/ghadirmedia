@@ -19,7 +19,7 @@ jobs:
           contentful space export \
             --space-id ${{ secrets.CONTENTFUL_SPACE }} \
             --environment-id master \
-            --delivery-token ${{ secrets.CONTENTFUL_TOKEN }} \
+            --delivery-token ${{ secrets.CONTENTFUL_MANAGEMENT_TOKEN }} \
             --content-file content.json
 
       - name: Commit files
