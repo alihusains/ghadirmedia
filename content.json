@@ -1,1 +1,5356 @@
-
+{
+  "contentTypes": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "mediaItem",
+        "type": "ContentType",
+        "createdAt": "2025-12-04T12:41:03.657Z",
+        "updatedAt": "2025-12-05T12:18:58.195Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 25,
+        "publishedAt": "2025-12-05T12:18:58.195Z",
+        "firstPublishedAt": "2025-12-04T12:41:04.182Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 13,
+        "version": 26,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/content_types/mediaItem"
+      },
+      "displayField": "itemId",
+      "name": "Media Item",
+      "description": "Create a content type called \"Media Item\" for an OTT media platform.  Fields required:  - item_id (short text, required, unique) - title (short text, required) - media_type (dropdown with values: audio, video, livestream) - source_type (dropdown with values: youtube, custom_url, contentful_upload) - media_urls (long text field allowing multiple URLs separated by commas) - uploaded_media (media asset field, optional) - youtube_playlist_id (short text, optional) - playlist (reference field to Play",
+      "fields": [
+        {
+          "id": "itemId",
+          "name": "Item ID",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "uploadedMedia",
+          "name": "Uploaded Media",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "playbackType",
+          "name": "playback_type",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "in": [
+                "audio_url",
+                "livestream",
+                "upload",
+                "video_url",
+                "youtube"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "youtube_url",
+          "name": "YouTube url",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "regexp": {
+                "pattern": "^(ftp|http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-/]))?$",
+                "flags": null
+              },
+              "message": "Add a proper youtube url"
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "mediaUrl",
+          "name": "Media Url",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Symbol",
+            "validations": [
+              {
+                "regexp": {
+                  "pattern": "^(ftp|http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-/]))?$",
+                  "flags": null
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "playlist",
+          "name": "Playlist",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Entry"
+        },
+        {
+          "id": "authors",
+          "name": "Authors",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "size": {
+                "max": 1
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+              {
+                "linkContentType": [
+                  "author"
+                ]
+              }
+            ],
+            "linkType": "Entry"
+          }
+        },
+        {
+          "id": "posterImage",
+          "name": "Poster Image",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "tags",
+          "name": "Tags",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Symbol",
+            "validations": [
+            ]
+          }
+        },
+        {
+          "id": "duration",
+          "name": "Duration",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "isActive",
+          "name": "Is Active",
+          "type": "Boolean",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "playlist",
+        "type": "ContentType",
+        "createdAt": "2025-12-04T12:41:30.479Z",
+        "updatedAt": "2025-12-05T11:40:45.944Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2025-12-05T11:40:45.944Z",
+        "firstPublishedAt": "2025-12-04T12:41:30.947Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/content_types/playlist"
+      },
+      "displayField": "playlistId",
+      "name": "Playlist",
+      "description": "Create a content type called \"Playlist\" for grouping OTT videos or audios into collections or series.  Fields required:  - playlist_id (short text, required, unique) - title (short text, required) - description (long text, optional) - youtube_playlist_id (short text, optional) - episodes (multi reference field pointing to Media Item, optional) - authors (multi reference field pointing to Author, optional) - poster_image (media asset, optional) - is_active (boolean, default true)  This will suppo",
+      "fields": [
+        {
+          "id": "playlistId",
+          "name": "Playlist ID",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "description",
+          "name": "Description",
+          "type": "RichText",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "enabledNodeTypes": [
+                "heading-1",
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "heading-6",
+                "ordered-list",
+                "unordered-list",
+                "hr",
+                "blockquote",
+                "embedded-entry-block",
+                "embedded-asset-block",
+                "hyperlink",
+                "entry-hyperlink",
+                "asset-hyperlink",
+                "embedded-entry-inline"
+              ],
+              "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, unordered list, horizontal rule, quote, block entry, asset, link to Url, link to entry, link to asset, and inline entry nodes are allowed"
+            },
+            {
+              "enabledMarks": [
+                "bold",
+                "italic",
+                "underline",
+                "code"
+              ],
+              "message": "Only bold, italic, underline, and code marks are allowed"
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "youtubePlaylistId",
+          "name": "YouTube Playlist ID",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "episodes",
+          "name": "Episodes",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+            ],
+            "linkType": "Entry"
+          }
+        },
+        {
+          "id": "authors",
+          "name": "Authors",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "size": {
+                "max": 1
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+            ],
+            "linkType": "Entry"
+          }
+        },
+        {
+          "id": "posterImage",
+          "name": "Poster Image",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "isActive",
+          "name": "Is Active",
+          "type": "Boolean",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "channel",
+        "type": "ContentType",
+        "createdAt": "2025-12-04T12:41:46.891Z",
+        "updatedAt": "2025-12-05T12:31:38.970Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 7,
+        "publishedAt": "2025-12-05T12:31:38.970Z",
+        "firstPublishedAt": "2025-12-04T12:41:47.889Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 4,
+        "version": 8,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/content_types/channel"
+      },
+      "displayField": "channelId",
+      "name": "Channel",
+      "description": "Create a content type called \"Channel\" to manage live TV channels inside an OTT platform.  Fields required:  - channel_id (short text, required, unique) - channel_name (short text, required) - stream_urls (long text allowing multiple URLs separated by commas) - channel_logo (media asset, optional) - tags (short text list, optional) - is_active (boolean, default true)  Editors should be able to add YouTube Live or HLS URLs easily.",
+      "fields": [
+        {
+          "id": "channelId",
+          "name": "Channel ID",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "channelName",
+          "name": "Channel Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "channel_thumbnail_url",
+          "name": "Channel Thumbnail",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "regexp": {
+                "pattern": "^(ftp|http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-/]))?$",
+                "flags": null
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "channel_thumbnail_backup",
+          "name": "Channel Thumbnail Backup",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "isActive",
+          "name": "Is Active",
+          "type": "Boolean",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "stream_url",
+          "name": "Stream Url",
+          "type": "Array",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Symbol",
+            "validations": [
+              {
+                "regexp": {
+                  "pattern": "^(ftp|http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-/]))?$",
+                  "flags": null
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "tags",
+          "name": "Tags",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Symbol",
+            "validations": [
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "section",
+        "type": "ContentType",
+        "createdAt": "2025-12-04T12:42:08.415Z",
+        "updatedAt": "2025-12-05T12:47:12.063Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2025-12-05T12:47:12.063Z",
+        "firstPublishedAt": "2025-12-04T12:42:08.878Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/content_types/section"
+      },
+      "displayField": "sectionId",
+      "name": "Section",
+      "description": "Create a content type called \"Section\" to build custom homepage rows and featured carousels in an OTT app.  Fields required:  - section_id (short text, required, unique) - title (short text, required) - section_type (dropdown values: manual, auto) - items (multi reference field allowing selection of Media Item, Playlist or Channel) - layout_type (dropdown values: carousel, grid) - is_active (boolean, default true)  This CMS is used to manually curate home screen rows and promotional sections.",
+      "fields": [
+        {
+          "id": "sectionId",
+          "name": "Section ID",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "items",
+          "name": "Items",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+            ],
+            "linkType": "Entry"
+          }
+        },
+        {
+          "id": "sectionType",
+          "name": "Section Type",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "in": [
+                "automatic",
+                "manual"
+              ]
+            }
+          ],
+          "defaultValue": {
+            "en-US": "manual"
+          },
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "layoutType",
+          "name": "Layout Type",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "in": [
+                "ad",
+                "carousel",
+                "grid",
+                "message"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "section_rank",
+          "name": "Section Rank",
+          "type": "Integer",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "defaultValue": {
+            "en-US": 0
+          },
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "isActive",
+          "name": "Is Active",
+          "type": "Boolean",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "scheduleRule",
+        "type": "ContentType",
+        "createdAt": "2025-12-04T12:42:43.956Z",
+        "updatedAt": "2025-12-04T12:42:44.444Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2025-12-04T12:42:44.444Z",
+        "firstPublishedAt": "2025-12-04T12:42:44.444Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/content_types/scheduleRule"
+      },
+      "displayField": "ruleId",
+      "name": "Schedule Rule",
+      "description": "Create a content type called \"Schedule Rule\" for managing daily and calendar based content recommendations.  Fields required:  - rule_id (short text, required, unique) - rule_title (short text, required) - hijri_date (short text, example: 13-Rajab, optional) - weekdays (multi select dropdown: mon, tue, wed, thu, fri, sat, sun) - scheduled_items (multi reference to Media Item or Playlist) - is_active (boolean, default true)  This CMS will allow editors to show special Duas and content based on we",
+      "fields": [
+        {
+          "id": "ruleId",
+          "name": "Rule ID",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "ruleTitle",
+          "name": "Rule Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "hijriDate",
+          "name": "Hijri Date",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "weekdays",
+          "name": "Weekdays",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Symbol",
+            "validations": [
+            ]
+          }
+        },
+        {
+          "id": "scheduledItems",
+          "name": "Scheduled Items",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+            ],
+            "linkType": "Entry"
+          }
+        },
+        {
+          "id": "isActive",
+          "name": "Is Active",
+          "type": "Boolean",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "advertisement",
+        "type": "ContentType",
+        "createdAt": "2025-12-04T12:42:59.943Z",
+        "updatedAt": "2025-12-04T12:43:00.425Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2025-12-04T12:43:00.425Z",
+        "firstPublishedAt": "2025-12-04T12:43:00.425Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/content_types/advertisement"
+      },
+      "displayField": "adId",
+      "name": "Advertisement",
+      "description": "Create a content type called \"Advertisement\" for managing banner and video ads in an OTT app.  Fields required:  - ad_id (short text, required, unique) - ad_type (dropdown: banner, interstitial, overlay) - ad_image (media asset, required) - click_url (short text, optional) - placement (dropdown: home-top, home-middle, between-sections, player-pre, player-mid) - is_active (boolean, default true)  Editors must be able to place ads in different screen positions easily.",
+      "fields": [
+        {
+          "id": "adId",
+          "name": "Ad ID",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "adType",
+          "name": "Ad Type",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "adImage",
+          "name": "Ad Image",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "clickUrl",
+          "name": "Click URL",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "placement",
+          "name": "Placement",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "isActive",
+          "name": "Is Active",
+          "type": "Boolean",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "appConfig",
+        "type": "ContentType",
+        "createdAt": "2025-12-04T12:43:36.123Z",
+        "updatedAt": "2025-12-04T12:43:36.556Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2025-12-04T12:43:36.556Z",
+        "firstPublishedAt": "2025-12-04T12:43:36.556Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/content_types/appConfig"
+      },
+      "displayField": "appVersion",
+      "name": "App Config",
+      "description": "Create a content type called \"App Config\" to store application configuration and versioning data.  Fields required:  - app_version (short text) - release_notes (long text) - is_active (boolean, default true)  This will help manage application releases and change tracking.",
+      "fields": [
+        {
+          "id": "appVersion",
+          "name": "App Version",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "releaseNotes",
+          "name": "Release Notes",
+          "type": "RichText",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "enabledNodeTypes": [
+                "heading-1",
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "heading-6",
+                "ordered-list",
+                "unordered-list",
+                "hr",
+                "blockquote",
+                "embedded-entry-block",
+                "embedded-asset-block",
+                "hyperlink",
+                "entry-hyperlink",
+                "asset-hyperlink",
+                "embedded-entry-inline"
+              ],
+              "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, unordered list, horizontal rule, quote, block entry, asset, link to Url, link to entry, link to asset, and inline entry nodes are allowed"
+            },
+            {
+              "enabledMarks": [
+                "bold",
+                "italic",
+                "underline",
+                "code"
+              ],
+              "message": "Only bold, italic, underline, and code marks are allowed"
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "isActive",
+          "name": "Is Active",
+          "type": "Boolean",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "author",
+        "type": "ContentType",
+        "createdAt": "2025-12-04T12:43:58.734Z",
+        "updatedAt": "2025-12-05T08:01:24.742Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 7,
+        "publishedAt": "2025-12-05T08:01:24.742Z",
+        "firstPublishedAt": "2025-12-04T12:43:59.175Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 4,
+        "version": 8,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/content_types/author"
+      },
+      "displayField": "authorId",
+      "name": "Author",
+      "description": "Create a content type called \"Author\" for an Islamic OTT CMS.  Fields required: - author_id (short text, required, unique value) - name (short text, required) - biography (long text, optional) - profile_photo (media asset, optional) - is_active (boolean, default true)  Use clean labels suitable for non technical editors.",
+      "fields": [
+        {
+          "id": "authorId",
+          "name": "Author ID",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "biography",
+          "name": "Biography",
+          "type": "RichText",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "enabledNodeTypes": [
+                "heading-1",
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "heading-6",
+                "ordered-list",
+                "unordered-list",
+                "hr",
+                "blockquote",
+                "embedded-entry-block",
+                "embedded-asset-block",
+                "hyperlink",
+                "entry-hyperlink",
+                "asset-hyperlink",
+                "embedded-entry-inline"
+              ],
+              "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, unordered list, horizontal rule, quote, block entry, asset, link to Url, link to entry, link to asset, and inline entry nodes are allowed"
+            },
+            {
+              "enabledMarks": [
+                "bold",
+                "italic",
+                "underline",
+                "code"
+              ],
+              "message": "Only bold, italic, underline, and code marks are allowed"
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "profilePhoto",
+          "name": "Profile Photo",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "isActive",
+          "name": "Is Active",
+          "type": "Boolean",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "author_url",
+          "name": "author_url",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "regexp": {
+                "pattern": "^(ftp|http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-/]))?$",
+                "flags": null
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    }
+  ],
+  "tags": [
+  ],
+  "editorInterfaces": [
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "y9mxmxr8hqnq",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 27,
+        "createdAt": "2025-12-04T12:41:04.333Z",
+        "createdBy": {
+          "sys": {
+            "id": "3DA0KsidqyLcF3Vyy12MHZ",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2025-12-05T12:18:59.047Z",
+        "updatedBy": {
+          "sys": {
+            "id": "3DA0KsidqyLcF3Vyy12MHZ",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "mediaItem",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "sidebar": [
+        {
+          "settings": {
+          },
+          "widgetId": "publication-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "3iszK8Gl7aaxLvxGyCOhgA",
+          "widgetNamespace": "app"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "content-preview-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "incoming-links-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "translation-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "versions-widget",
+          "widgetNamespace": "sidebar-builtin"
+        }
+      ],
+      "controls": [
+        {
+          "fieldId": "itemId",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "uploadedMedia",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "playbackType",
+          "widgetId": "radio",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "youtube_url",
+          "widgetId": "urlEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "mediaUrl",
+          "widgetId": "tagEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "playlist",
+          "widgetId": "entryLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "authors",
+          "widgetId": "entryLinksEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "posterImage",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "tags",
+          "widgetId": "tagEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "duration",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "isActive",
+          "widgetId": "boolean",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "y9mxmxr8hqnq",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 5,
+        "createdAt": "2025-12-04T12:41:31.118Z",
+        "createdBy": {
+          "sys": {
+            "id": "3DA0KsidqyLcF3Vyy12MHZ",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2025-12-05T11:40:46.745Z",
+        "updatedBy": {
+          "sys": {
+            "id": "3DA0KsidqyLcF3Vyy12MHZ",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "playlist",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "sidebar": [
+        {
+          "settings": {
+          },
+          "widgetId": "publication-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "3iszK8Gl7aaxLvxGyCOhgA",
+          "widgetNamespace": "app"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "content-preview-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "incoming-links-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "translation-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "versions-widget",
+          "widgetNamespace": "sidebar-builtin"
+        }
+      ],
+      "controls": [
+        {
+          "fieldId": "playlistId",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "description",
+          "widgetId": "richTextEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "youtubePlaylistId",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "episodes",
+          "widgetId": "entryLinksEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "authors",
+          "widgetId": "entryLinksEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "posterImage",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "isActive",
+          "widgetId": "boolean",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "y9mxmxr8hqnq",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 9,
+        "createdAt": "2025-12-04T12:41:48.047Z",
+        "createdBy": {
+          "sys": {
+            "id": "3DA0KsidqyLcF3Vyy12MHZ",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2025-12-05T12:31:39.782Z",
+        "updatedBy": {
+          "sys": {
+            "id": "3DA0KsidqyLcF3Vyy12MHZ",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "channel",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "sidebar": [
+        {
+          "settings": {
+          },
+          "widgetId": "publication-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "3iszK8Gl7aaxLvxGyCOhgA",
+          "widgetNamespace": "app"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "content-preview-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "incoming-links-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "translation-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "versions-widget",
+          "widgetNamespace": "sidebar-builtin"
+        }
+      ],
+      "controls": [
+        {
+          "fieldId": "channelId",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "channelName",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "channel_thumbnail_url",
+          "widgetId": "urlEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "channel_thumbnail_backup",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "isActive",
+          "widgetId": "boolean",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "stream_url",
+          "widgetId": "tagEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "tags",
+          "widgetId": "tagEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "y9mxmxr8hqnq",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 7,
+        "createdAt": "2025-12-04T12:42:09.080Z",
+        "createdBy": {
+          "sys": {
+            "id": "3DA0KsidqyLcF3Vyy12MHZ",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2025-12-05T12:47:12.992Z",
+        "updatedBy": {
+          "sys": {
+            "id": "3DA0KsidqyLcF3Vyy12MHZ",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "section",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "sidebar": [
+        {
+          "settings": {
+          },
+          "widgetId": "publication-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "3iszK8Gl7aaxLvxGyCOhgA",
+          "widgetNamespace": "app"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "content-preview-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "incoming-links-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "translation-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "versions-widget",
+          "widgetNamespace": "sidebar-builtin"
+        }
+      ],
+      "controls": [
+        {
+          "fieldId": "sectionId",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "items",
+          "widgetId": "entryLinksEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "sectionType",
+          "widgetId": "radio",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "layoutType",
+          "widgetId": "radio",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "section_rank",
+          "settings": {
+            "helpText": "Lower the rank, first is the content , 1  = top"
+          },
+          "widgetId": "numberEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "isActive",
+          "widgetId": "boolean",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "y9mxmxr8hqnq",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 3,
+        "createdAt": "2025-12-04T12:42:44.606Z",
+        "createdBy": {
+          "sys": {
+            "id": "3DA0KsidqyLcF3Vyy12MHZ",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2025-12-05T11:31:21.396Z",
+        "updatedBy": {
+          "sys": {
+            "id": "3DA0KsidqyLcF3Vyy12MHZ",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "scheduleRule",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "sidebar": [
+        {
+          "widgetId": "publication-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "3iszK8Gl7aaxLvxGyCOhgA",
+          "widgetNamespace": "app"
+        },
+        {
+          "widgetId": "content-preview-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "incoming-links-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "translation-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "versions-widget",
+          "widgetNamespace": "sidebar-builtin"
+        }
+      ],
+      "controls": [
+        {
+          "fieldId": "ruleId",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "ruleTitle",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "hijriDate",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "weekdays",
+          "widgetId": "tagEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "scheduledItems",
+          "widgetId": "entryLinksEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "isActive",
+          "widgetId": "boolean",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "y9mxmxr8hqnq",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 3,
+        "createdAt": "2025-12-04T12:43:00.622Z",
+        "createdBy": {
+          "sys": {
+            "id": "3DA0KsidqyLcF3Vyy12MHZ",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2025-12-05T11:31:20.433Z",
+        "updatedBy": {
+          "sys": {
+            "id": "3DA0KsidqyLcF3Vyy12MHZ",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "advertisement",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "sidebar": [
+        {
+          "widgetId": "publication-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "3iszK8Gl7aaxLvxGyCOhgA",
+          "widgetNamespace": "app"
+        },
+        {
+          "widgetId": "content-preview-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "incoming-links-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "translation-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "versions-widget",
+          "widgetNamespace": "sidebar-builtin"
+        }
+      ],
+      "controls": [
+        {
+          "fieldId": "adId",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "adType",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "adImage",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "clickUrl",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "placement",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "isActive",
+          "widgetId": "boolean",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "y9mxmxr8hqnq",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 3,
+        "createdAt": "2025-12-04T12:43:36.708Z",
+        "createdBy": {
+          "sys": {
+            "id": "3DA0KsidqyLcF3Vyy12MHZ",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2025-12-05T11:31:20.440Z",
+        "updatedBy": {
+          "sys": {
+            "id": "3DA0KsidqyLcF3Vyy12MHZ",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "appConfig",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "sidebar": [
+        {
+          "widgetId": "publication-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "3iszK8Gl7aaxLvxGyCOhgA",
+          "widgetNamespace": "app"
+        },
+        {
+          "widgetId": "content-preview-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "incoming-links-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "translation-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "versions-widget",
+          "widgetNamespace": "sidebar-builtin"
+        }
+      ],
+      "controls": [
+        {
+          "fieldId": "appVersion",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "releaseNotes",
+          "widgetId": "richTextEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "isActive",
+          "widgetId": "boolean",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "y9mxmxr8hqnq",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 9,
+        "createdAt": "2025-12-04T12:43:59.456Z",
+        "createdBy": {
+          "sys": {
+            "id": "3DA0KsidqyLcF3Vyy12MHZ",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2025-12-05T11:31:20.419Z",
+        "updatedBy": {
+          "sys": {
+            "id": "3DA0KsidqyLcF3Vyy12MHZ",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "author",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "sidebar": [
+        {
+          "widgetId": "publication-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "3iszK8Gl7aaxLvxGyCOhgA",
+          "widgetNamespace": "app"
+        },
+        {
+          "widgetId": "content-preview-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "incoming-links-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "translation-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "versions-widget",
+          "widgetNamespace": "sidebar-builtin"
+        }
+      ],
+      "controls": [
+        {
+          "fieldId": "authorId",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "name",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "biography",
+          "widgetId": "richTextEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "profilePhoto",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "isActive",
+          "widgetId": "boolean",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "author_url",
+          "widgetId": "urlEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "4BxHgWAGfqQxoFZkjfjYye",
+        "type": "Entry",
+        "createdAt": "2025-12-04T12:44:16.381Z",
+        "updatedAt": "2025-12-05T08:22:11.152Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 11,
+        "publishedAt": "2025-12-05T08:22:11.152Z",
+        "firstPublishedAt": "2025-12-05T08:05:22.199Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 12,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "author"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/entries/4BxHgWAGfqQxoFZkjfjYye"
+      },
+      "fields": {
+        "authorId": {
+          "en-US": "mahdi-samavati"
+        },
+        "name": {
+          "en-US": "Hajj Mahdi Samavati"
+        },
+        "biography": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Hajj Mahdi Samavati is a distinguished Iranian reciter and spiritual artist renowned for his soulful renditions of Islamic supplications, prayers, and pilgrimages. Inheriting the art of devotional recitation across three generations, he has dedicated his life to preserving and reviving the authentic tradition of supplication within the Islamic world.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Through his unique voice and heartfelt delivery, Hajj Mahdi Samavati has inspired countless listeners to deepen their spiritual connection with the Divine. His extensive body of work includes high-quality recordings of revered supplications such as Dua Kumayl, Dua Tawassul, Dua Arafah, and Dua Abu Hamzah Thumali, as well as the sacred pilgrimages of Ashura, Jami’ah Kabeerah, and Al-Yaseen.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "As the official representative of the Bayt al-Hussain (AS) society, he continues to lead weekly ceremonies and special religious gatherings, offering a profound spiritual experience that blends devotion, art, and tradition. His mission remains to guide hearts toward peace, reflection, and closeness to the Creator through the timeless beauty of prayer.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "isActive": {
+          "en-US": true
+        },
+        "author_url": {
+          "en-US": "https://cdn.jsdelivr.net/gh/alihusains/ghadirmedia@main/authors/haj-mahdi-samavati.jpg"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "3zzSYr6GQ8w7pf8X7PFpwv",
+        "type": "Entry",
+        "createdAt": "2025-12-04T12:48:15.263Z",
+        "updatedAt": "2025-12-05T12:22:30.951Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 14,
+        "publishedAt": "2025-12-05T12:22:30.951Z",
+        "firstPublishedAt": "2025-12-05T12:22:30.951Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 15,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "mediaItem"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/entries/3zzSYr6GQ8w7pf8X7PFpwv"
+      },
+      "fields": {
+        "itemId": {
+          "en-US": "ziyarat-e-waritha-audio"
+        },
+        "title": {
+          "en-US": "Ziyarat Waritha"
+        },
+        "uploadedMedia": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "19UC8vExWOWeAtjylGmYfJ"
+            }
+          }
+        },
+        "playbackType": {
+          "en-US": "audio_url"
+        },
+        "youtube_url": {
+          "en-US": "https://youtu.be/FIKMfyEVeeg?si=8xoX1Y8E0-6QpBeW"
+        },
+        "mediaUrl": {
+          "en-US": [
+            "https://dl.sndup.net/9zhkr/Ziyarat%20e%20Warisa%20by%20Haaj%20Mahdi%20Samavati.mp3"
+          ]
+        },
+        "authors": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4BxHgWAGfqQxoFZkjfjYye"
+              }
+            }
+          ]
+        },
+        "posterImage": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "19UC8vExWOWeAtjylGmYfJ"
+            }
+          }
+        },
+        "tags": {
+          "en-US": [
+            "Popular",
+            "Daily"
+          ]
+        },
+        "isActive": {
+          "en-US": true
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "3iXjK1TdfuK4B3wMHeYWd7",
+        "type": "Entry",
+        "createdAt": "2025-12-05T08:12:36.994Z",
+        "updatedAt": "2025-12-05T08:28:10.405Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 22,
+        "publishedAt": "2025-12-05T08:28:10.405Z",
+        "firstPublishedAt": "2025-12-05T08:28:10.405Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 23,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "author"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/entries/3iXjK1TdfuK4B3wMHeYWd7"
+      },
+      "fields": {
+        "authorId": {
+          "en-US": "abather-alhalwachi"
+        },
+        "name": {
+          "en-US": "Abather Al Halawaji"
+        },
+        "biography": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Abather Al Halawaji (Arabic: أباذر الحلواجي) is a renowned and deeply respected reciter (maddah/munshid) of Islamic supplications, prayers, and elegies within the global Shia Muslim community. Hailing from Bahrain, he has become a distinctive voice recognized for his deeply moving, melodious, and devotional style that resonates with listeners seeking spiritual connection.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "\nKey Highlights of his Bio:",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "\n",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "value": "- Spiritual Calling:",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": " Al Halawaji dedicated his career to the sacred art of reciting duas (supplications), munajats (whispered prayers), and latmiyas (elegies commemorating religious figures, particularly those related to the tragedy of Karbala).\n\n- ",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "value": "Signature Style:",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": " His recitations are characterized by a clear, emotive vocal delivery that emphasizes contemplation and humility. He is particularly celebrated for the emotional weight and spiritual energy he brings to classic Shi'a devotional texts.\n\n",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "value": "- Major Works: ",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "He has produced definitive audio recordings of essential Shi'a prayers, including the lengthy and profound Dua Kumail, Ziyarat Ashura, Dua Iftitah, and Dua Tawassul. These recordings serve as a primary spiritual resource for millions worldwide.\n\n",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "value": "- Global Reach:",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": " While rooted in Middle Eastern religious traditions, Al Halawaji has achieved a global audience. His work transcends geographical and linguistic barriers, making his recitations accessible to diverse communities across Europe, North America, Africa, and Asia, often accompanied by translations in English, Urdu, and other languages.\n\n",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "value": "- Digital Presence:",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": " A prominent figure in the digital Islamic media landscape, his content is widely distributed across all major streaming platforms, including YouTube, ensuring his voice is readily available for daily worship and remembrance.\nAbather Al Halawaji remains a significant contemporary religious personality whose contributions continue to aid believers in their spiritual journeys",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "isActive": {
+          "en-US": true
+        },
+        "author_url": {
+          "en-US": "https://cdn.jsdelivr.net/gh/alihusains/ghadirmedia@main/authors/abather-alhalwachi.jpg"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "5FmHjuJDiGOrheVbJoLRta",
+        "type": "Entry",
+        "createdAt": "2025-12-05T08:29:14.571Z",
+        "updatedAt": "2025-12-05T11:54:37.463Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 12,
+        "publishedAt": "2025-12-05T11:54:37.463Z",
+        "firstPublishedAt": "2025-12-05T11:54:37.463Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 13,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "mediaItem"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/entries/5FmHjuJDiGOrheVbJoLRta"
+      },
+      "fields": {
+        "itemId": {
+          "en-US": "ziyarat-e-ashura-audio"
+        },
+        "title": {
+          "en-US": "Ziyarat Ashura"
+        },
+        "playbackType": {
+          "en-US": "audio_url"
+        },
+        "youtube_url": {
+          "en-US": "https://youtu.be/6KTb7RNwI0o?si=occSMeU1dopMyTFD"
+        },
+        "mediaUrl": {
+          "en-US": [
+            "http://dl.aviny.com/voice/doa_ziarat/ziarat/ziarat_ashura_samavati.mp3"
+          ]
+        },
+        "authors": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4BxHgWAGfqQxoFZkjfjYye"
+              }
+            }
+          ]
+        },
+        "posterImage": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "6mhquRniVHrgsnvZAuctSD"
+            }
+          }
+        },
+        "tags": {
+          "en-US": [
+            "Popular"
+          ]
+        },
+        "isActive": {
+          "en-US": true
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "6eLrtnUMfwuqjlcVxVmd6P",
+        "type": "Entry",
+        "createdAt": "2025-12-05T12:25:05.133Z",
+        "updatedAt": "2025-12-05T12:26:17.699Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2025-12-05T12:26:17.699Z",
+        "firstPublishedAt": "2025-12-05T12:26:17.699Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "playlist"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/entries/6eLrtnUMfwuqjlcVxVmd6P"
+      },
+      "fields": {
+        "playlistId": {
+          "en-US": "Ziyarat"
+        },
+        "title": {
+          "en-US": "Ziyarat"
+        },
+        "episodes": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "5FmHjuJDiGOrheVbJoLRta"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3zzSYr6GQ8w7pf8X7PFpwv"
+              }
+            }
+          ]
+        },
+        "authors": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4BxHgWAGfqQxoFZkjfjYye"
+              }
+            }
+          ]
+        },
+        "isActive": {
+          "en-US": true
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "22tS5QfEesZsgx0FkOr8rL",
+        "type": "Entry",
+        "createdAt": "2025-12-05T12:26:32.140Z",
+        "updatedAt": "2025-12-05T12:34:02.100Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 8,
+        "publishedAt": "2025-12-05T12:34:02.100Z",
+        "firstPublishedAt": "2025-12-05T12:34:02.100Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 9,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "channel"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/entries/22tS5QfEesZsgx0FkOr8rL"
+      },
+      "fields": {
+        "channelId": {
+          "en-US": "Win TV"
+        },
+        "channelName": {
+          "en-US": "Win TV"
+        },
+        "channel_thumbnail_url": {
+          "en-US": "https://shiachannel.in/livetv/img/channels/win.png"
+        },
+        "channel_thumbnail_backup": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "2CD7JhHfARhGs1zqKWxKHx"
+            }
+          }
+        },
+        "isActive": {
+          "en-US": true
+        },
+        "stream_url": {
+          "en-US": [
+            "https://cdn.smartstream.video/smartstream-us/channelwinlive/channelwinlive/playlist.m3u8"
+          ]
+        },
+        "tags": {
+          "en-US": [
+            "Popular",
+            "Urdu"
+          ]
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "LKdpwoFmK2ltN87vUWwXm",
+        "type": "Entry",
+        "createdAt": "2025-12-05T12:34:45.066Z",
+        "updatedAt": "2025-12-05T12:45:29.165Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2025-12-05T12:45:29.165Z",
+        "firstPublishedAt": "2025-12-05T12:45:29.165Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "section"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/entries/LKdpwoFmK2ltN87vUWwXm"
+      },
+      "fields": {
+        "sectionId": {
+          "en-US": "Featured"
+        },
+        "title": {
+          "en-US": "Featured"
+        },
+        "items": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "22tS5QfEesZsgx0FkOr8rL"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3zzSYr6GQ8w7pf8X7PFpwv"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "5FmHjuJDiGOrheVbJoLRta"
+              }
+            }
+          ]
+        },
+        "sectionType": {
+          "en-US": "manual"
+        },
+        "layoutType": {
+          "en-US": "carousel"
+        },
+        "section_rank": {
+          "en-US": 1
+        },
+        "isActive": {
+          "en-US": true
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "1K8Hfswtw6qBbcpk1E8ccY",
+        "type": "Entry",
+        "createdAt": "2025-12-05T12:45:35.606Z",
+        "updatedAt": "2025-12-05T12:45:50.686Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2025-12-05T12:45:50.686Z",
+        "firstPublishedAt": "2025-12-05T12:45:50.686Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "section"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/entries/1K8Hfswtw6qBbcpk1E8ccY"
+      },
+      "fields": {
+        "sectionId": {
+          "en-US": "Muharram Picks"
+        },
+        "title": {
+          "en-US": "Featured"
+        },
+        "items": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "22tS5QfEesZsgx0FkOr8rL"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3zzSYr6GQ8w7pf8X7PFpwv"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "5FmHjuJDiGOrheVbJoLRta"
+              }
+            }
+          ]
+        },
+        "sectionType": {
+          "en-US": "manual"
+        },
+        "layoutType": {
+          "en-US": "carousel"
+        },
+        "section_rank": {
+          "en-US": 1
+        },
+        "isActive": {
+          "en-US": true
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "1EUS8erCW7af3uRJPdjrty",
+        "type": "Entry",
+        "createdAt": "2025-12-05T12:45:55.044Z",
+        "updatedAt": "2025-12-05T12:46:06.554Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2025-12-05T12:46:06.554Z",
+        "firstPublishedAt": "2025-12-05T12:46:06.554Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "section"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/entries/1EUS8erCW7af3uRJPdjrty"
+      },
+      "fields": {
+        "sectionId": {
+          "en-US": "Editors Recommendations"
+        },
+        "title": {
+          "en-US": "Featured"
+        },
+        "items": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "22tS5QfEesZsgx0FkOr8rL"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3zzSYr6GQ8w7pf8X7PFpwv"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "5FmHjuJDiGOrheVbJoLRta"
+              }
+            }
+          ]
+        },
+        "sectionType": {
+          "en-US": "manual"
+        },
+        "layoutType": {
+          "en-US": "carousel"
+        },
+        "section_rank": {
+          "en-US": 1
+        },
+        "isActive": {
+          "en-US": true
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "20NodTLmGY0WD8gT3ZsBak",
+        "type": "Entry",
+        "createdAt": "2025-12-05T12:46:17.190Z",
+        "updatedAt": "2025-12-05T12:46:33.129Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2025-12-05T12:46:33.129Z",
+        "firstPublishedAt": "2025-12-05T12:46:33.129Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "section"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/entries/20NodTLmGY0WD8gT3ZsBak"
+      },
+      "fields": {
+        "sectionId": {
+          "en-US": "Rajab Delights"
+        },
+        "title": {
+          "en-US": "Featured"
+        },
+        "items": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "22tS5QfEesZsgx0FkOr8rL"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3zzSYr6GQ8w7pf8X7PFpwv"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "5FmHjuJDiGOrheVbJoLRta"
+              }
+            }
+          ]
+        },
+        "sectionType": {
+          "en-US": "manual"
+        },
+        "layoutType": {
+          "en-US": "carousel"
+        },
+        "section_rank": {
+          "en-US": 1
+        },
+        "isActive": {
+          "en-US": true
+        }
+      }
+    }
+  ],
+  "assets": [
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "3JDfQBxj68VUeGBuPS0FXh",
+        "type": "Asset",
+        "createdAt": "2024-07-27T15:48:24.893Z",
+        "updatedAt": "2024-07-29T19:37:15.983Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 11,
+        "publishedAt": "2024-07-29T19:37:15.983Z",
+        "firstPublishedAt": "2024-07-29T19:37:15.983Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 12,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/assets/3JDfQBxj68VUeGBuPS0FXh"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Ziyarat of saturday - Holy Prophet (saww)"
+        },
+        "description": {
+          "en-US": "Ziyarat of saturday - Holy Prophet (saww)"
+        },
+        "file": {
+          "en-US": {
+            "url": "//videos.ctfassets.net/y9mxmxr8hqnq/3JDfQBxj68VUeGBuPS0FXh/1443f947abd7bcfece2eb82c28f64cb1/Aparat_-_video_sharing_service__1_.mp4",
+            "details": {
+              "size": 22926427
+            },
+            "fileName": "Aparat - video sharing service (1).mp4",
+            "contentType": "video/mp4"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "2eyh3MRqIWLf0yWfiW7HLk",
+        "type": "Asset",
+        "createdAt": "2024-07-28T12:19:32.019Z",
+        "updatedAt": "2024-07-28T12:27:36.992Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 9,
+        "publishedAt": "2024-07-28T12:27:36.992Z",
+        "firstPublishedAt": "2024-07-28T12:21:05.876Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 10,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/assets/2eyh3MRqIWLf0yWfiW7HLk"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Ziyarate Aale Yaseen - Mahdi Samavati"
+        },
+        "file": {
+          "en-US": {
+            "url": "//videos.ctfassets.net/y9mxmxr8hqnq/2eyh3MRqIWLf0yWfiW7HLk/d942bc2db071f1b1408032133b751c00/video__3_.mp4",
+            "details": {
+              "size": 43902219
+            },
+            "fileName": "video (3).mp4",
+            "contentType": "video/mp4"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "1O5zYGj7vi9nR48PYAcYLh",
+        "type": "Asset",
+        "createdAt": "2024-07-28T12:36:07.755Z",
+        "updatedAt": "2024-07-28T14:34:09.743Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 6,
+        "publishedAt": "2024-07-28T14:34:09.743Z",
+        "firstPublishedAt": "2024-07-28T14:34:09.743Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 7,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/assets/1O5zYGj7vi9nR48PYAcYLh"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Ziyarate Ameenullah by Mehdi Samavati"
+        },
+        "file": {
+          "en-US": {
+            "url": "//videos.ctfassets.net/y9mxmxr8hqnq/1O5zYGj7vi9nR48PYAcYLh/3bba9257e2b1aecf632c142a690bc43c/video__4_.mp4",
+            "details": {
+              "size": 18402063
+            },
+            "fileName": "video (4).mp4",
+            "contentType": "video/mp4"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "3X3eQx0JgXLViIKR27G2lZ",
+        "type": "Asset",
+        "createdAt": "2024-07-28T15:00:48.946Z",
+        "updatedAt": "2024-07-28T15:09:28.116Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 12,
+        "publishedAt": "2024-07-28T15:09:28.116Z",
+        "firstPublishedAt": "2024-07-28T15:09:28.116Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 13,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/assets/3X3eQx0JgXLViIKR27G2lZ"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Ziyarate Waritha"
+        },
+        "description": {
+          "en-US": "Ziyarate Waritha"
+        },
+        "file": {
+          "en-US": {
+            "url": "//videos.ctfassets.net/y9mxmxr8hqnq/3X3eQx0JgXLViIKR27G2lZ/79db45531a5ccff2a03f4abd51e1e9ea/Custom_Input_URL_Video.mp4",
+            "details": {
+              "size": 32034595
+            },
+            "fileName": "Custom_Input_URL_Video.mp4",
+            "contentType": "video/mp4"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "4SPyjfCrLsVWaaNzoOmUqQ",
+        "type": "Asset",
+        "createdAt": "2024-07-28T15:09:59.232Z",
+        "updatedAt": "2024-07-28T15:18:36.904Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 7,
+        "publishedAt": "2024-07-28T15:18:36.904Z",
+        "firstPublishedAt": "2024-07-28T15:18:36.904Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 8,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/assets/4SPyjfCrLsVWaaNzoOmUqQ"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Dua e Tawassul"
+        },
+        "file": {
+          "en-US": {
+            "url": "//videos.ctfassets.net/y9mxmxr8hqnq/4SPyjfCrLsVWaaNzoOmUqQ/8ff44935a7897b86b5a342a56a2955b2/________________________________-_Dua_Tawassul_-____________.mp4",
+            "details": {
+              "size": 39933783
+            },
+            "fileName": "دعاء توسل «نگارش آسان» سماواتی - Dua Tawassul - دعاء التوسل.mp4",
+            "contentType": "video/mp4"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "72I4yYXQrN3Y2k4DJHbMWy",
+        "type": "Asset",
+        "createdAt": "2024-07-29T06:51:58.243Z",
+        "updatedAt": "2024-07-29T06:55:43.796Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2024-07-29T06:55:43.796Z",
+        "firstPublishedAt": "2024-07-29T06:55:43.796Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/assets/72I4yYXQrN3Y2k4DJHbMWy"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Dua e Ahad"
+        },
+        "description": {
+          "en-US": "https://thumbs.odycdn.com/8d0e952ee9f29492b536a953f9418c94.webp"
+        },
+        "file": {
+          "en-US": {
+            "url": "//videos.ctfassets.net/y9mxmxr8hqnq/72I4yYXQrN3Y2k4DJHbMWy/38bbfb56338e51eb298bd3496eb80bc1/_______________________-________-_Dua_Ahd_-___________.mp4",
+            "details": {
+              "size": 29018301
+            },
+            "fileName": "دعای عهد «نگارش آسان» - فرهمند - Dua Ahd - دعاء العهد.mp4",
+            "contentType": "video/mp4"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "4Hjo96qEVfS6gzGiErVT5x",
+        "type": "Asset",
+        "createdAt": "2024-07-29T07:00:37.463Z",
+        "updatedAt": "2025-08-28T20:58:23.457Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2025-08-28T20:58:23.457Z",
+        "firstPublishedAt": "2025-08-28T20:58:23.457Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/assets/4Hjo96qEVfS6gzGiErVT5x"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Dua e Nad e Ali (a.s)"
+        },
+        "description": {
+          "en-US": "https://thumbs.odycdn.com/356b137a5353a6e091f72ebcc1d61865.webp"
+        },
+        "file": {
+          "en-US": {
+            "url": "//videos.ctfassets.net/y9mxmxr8hqnq/4Hjo96qEVfS6gzGiErVT5x/91ba1073f282df5fcfaa488171384ee6/__________________________-_________-_Dua_Naad-e_Ali_-___________________.mp4",
+            "details": {
+              "size": 15395788
+            },
+            "fileName": "دعای نادعلی «نگارش آسان» - بیوکافی - Dua Naad-e Ali - دعاء نادِ عَلِیًّا.mp4",
+            "contentType": "video/mp4"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "4lRKfNOl7b5YbHtciZM4Ib",
+        "type": "Asset",
+        "createdAt": "2024-07-29T14:29:25.301Z",
+        "updatedAt": "2024-07-29T19:35:00.283Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 10,
+        "publishedAt": "2024-07-29T19:35:00.283Z",
+        "firstPublishedAt": "2024-07-29T19:35:00.283Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 11,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/assets/4lRKfNOl7b5YbHtciZM4Ib"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Ziyarat of Janabe Zehra (sa)"
+        },
+        "description": {
+          "en-US": "https://thumbs.odycdn.com/a8a8d0858a0db9828bfd980573188d51.webp"
+        },
+        "file": {
+          "en-US": {
+            "url": "//videos.ctfassets.net/y9mxmxr8hqnq/4lRKfNOl7b5YbHtciZM4Ib/7a9252c764db20c0dd15170f43016084/__________________________________-______________-_Ziyarat_of_Lady_Fatimah_s.a.mp4",
+            "details": {
+              "size": 24833216
+            },
+            "fileName": "زیارت حضرت زهرا (س) «نگارش آسان» - صوت_ سماواتی - Ziyarat of Lady Fatimah s.a.mp4",
+            "contentType": "video/mp4"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "3wuG0V2BPEaFOdjoeNkqMh",
+        "type": "Asset",
+        "createdAt": "2024-07-29T19:44:02.405Z",
+        "updatedAt": "2024-07-29T19:56:26.521Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 7,
+        "publishedAt": "2024-07-29T19:56:26.521Z",
+        "firstPublishedAt": "2024-07-29T19:56:26.521Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 8,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/assets/3wuG0V2BPEaFOdjoeNkqMh"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Ziyarat of Sunday - Ziyarat of Imam Ali (as)and Janabe Zehra (sa)"
+        },
+        "file": {
+          "en-US": {
+            "url": "//videos.ctfassets.net/y9mxmxr8hqnq/3wuG0V2BPEaFOdjoeNkqMh/94733016af6e16dce476bf98c0d810da/Ziyarat_of_Sunday__Garesh_Asan___Yazdan_Panah__-_Ziyarat_of_Sunday.mp4",
+            "details": {
+              "size": 13300355
+            },
+            "fileName": "Ziyarat of Sunday _Garesh Asan_ (Yazdan Panah) - Ziyarat of Sunday.mp4",
+            "contentType": "video/mp4"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "8Wses05Um81pnXD11NbZ1",
+        "type": "Asset",
+        "createdAt": "2024-07-29T19:56:33.985Z",
+        "updatedAt": "2024-07-29T19:57:36.516Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2024-07-29T19:57:36.516Z",
+        "firstPublishedAt": "2024-07-29T19:57:36.516Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/assets/8Wses05Um81pnXD11NbZ1"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Ziyarat of Monday - Imam Hassan Imam Hussain (as)"
+        },
+        "description": {
+          "en-US": "Ziyarat of Monday - Imam Hassan Imam Hussain (as)"
+        },
+        "file": {
+          "en-US": {
+            "url": "//videos.ctfassets.net/y9mxmxr8hqnq/8Wses05Um81pnXD11NbZ1/5d0286d5d30de3fda48392f3e25375b6/Ziyarat_of_Monday__Garesh_Asan___Yazdan_Panah__-_Ziyarat_of_Monday.mp4",
+            "details": {
+              "size": 17635385
+            },
+            "fileName": "Ziyarat of Monday _Garesh Asan_ (Yazdan Panah) - Ziyarat of Monday.mp4",
+            "contentType": "video/mp4"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "2eqPA7xysFkL9coHHHLlYo",
+        "type": "Asset",
+        "createdAt": "2024-07-30T17:11:01.092Z",
+        "updatedAt": "2024-07-30T17:13:40.377Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2024-07-30T17:13:40.377Z",
+        "firstPublishedAt": "2024-07-30T17:13:40.377Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/assets/2eqPA7xysFkL9coHHHLlYo"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Ziyarat of Tuesday - I. Sajjad, I. Baqir & I.Sadiq (as)"
+        },
+        "description": {
+          "en-US": "https://thumbs.odycdn.com/acbf94591df75c79fdff8989d4d6c4ee.webp"
+        },
+        "file": {
+          "en-US": {
+            "url": "//videos.ctfassets.net/y9mxmxr8hqnq/2eqPA7xysFkL9coHHHLlYo/40c51d9d2e3c16c3237500ae50461bf5/_________________________________________-_Ziyarat_of_Tuesday_-__________________.mp4",
+            "details": {
+              "size": 10025830
+            },
+            "fileName": "زیارت سه_شنبه «نگارش آسان» (یزدان_پناه) - Ziyarat of Tuesday - زیارة یوم الثلاثا.mp4",
+            "contentType": "video/mp4"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "uZwCv9QTOexkcNc94JLm2",
+        "type": "Asset",
+        "createdAt": "2024-07-30T17:13:49.064Z",
+        "updatedAt": "2024-07-30T17:14:31.951Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 7,
+        "publishedAt": "2024-07-30T17:14:31.951Z",
+        "firstPublishedAt": "2024-07-30T17:14:31.951Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 8,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/assets/uZwCv9QTOexkcNc94JLm2"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Ziyarat of Wednesday - 7th,8th, 9th,10 Imam"
+        },
+        "file": {
+          "en-US": {
+            "url": "//videos.ctfassets.net/y9mxmxr8hqnq/uZwCv9QTOexkcNc94JLm2/c3840a95dc32e40917bb6f9d0784f1b4/Ziyarat_of_Wednesday__Garesh_Asan___Yazdan_Panah__-_Ziyarat_of_Wednesday.mp4",
+            "details": {
+              "size": 8816307
+            },
+            "fileName": "Ziyarat of Wednesday _Garesh Asan_ (Yazdan Panah) - Ziyarat of Wednesday.mp4",
+            "contentType": "video/mp4"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "3M5jW31gtm4lfWwtUFVOOy",
+        "type": "Asset",
+        "createdAt": "2024-07-30T18:34:15.876Z",
+        "updatedAt": "2024-07-30T18:43:17.720Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2024-07-30T18:43:17.720Z",
+        "firstPublishedAt": "2024-07-30T18:43:17.720Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/assets/3M5jW31gtm4lfWwtUFVOOy"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Thursday - Ziyarat of Imam Hasan al-Askari (as)"
+        },
+        "file": {
+          "en-US": {
+            "url": "//videos.ctfassets.net/y9mxmxr8hqnq/3M5jW31gtm4lfWwtUFVOOy/b700097898eabbf7adb92aac2df245de/_________________________________________-_Ziyarat_of_Thursday_-_________________.mp4",
+            "details": {
+              "size": 6290112
+            },
+            "fileName": "زیارت پنجشنبه «نگارش آسان» (یزدان_پناه) - Ziyarat of Thursday - زیارة یوم الخمیس.mp4",
+            "contentType": "video/mp4"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "4Vm717dNoJ3r3say4ZQXIi",
+        "type": "Asset",
+        "createdAt": "2024-07-30T18:43:22.942Z",
+        "updatedAt": "2025-08-28T20:58:05.198Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2025-08-28T20:58:05.198Z",
+        "firstPublishedAt": "2025-08-28T20:58:05.198Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/assets/4Vm717dNoJ3r3say4ZQXIi"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Friday - Ziyarat of Imam Mahdi (atfs)"
+        },
+        "file": {
+          "en-US": {
+            "url": "//videos.ctfassets.net/y9mxmxr8hqnq/4Vm717dNoJ3r3say4ZQXIi/c0964a963b063877c6fc04d419df3d6e/______________________________________-_Ziyarat_of_Friday_-_________________.mp4",
+            "details": {
+              "size": 14074946
+            },
+            "fileName": "زیارت جمعه «نگارش آسان» (یزدان_پناه) - Ziyarat of Friday - زیارة یوم الجمعة.mp4",
+            "contentType": "video/mp4"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "2TSrffuJi1qxi2AgO1KAMi",
+        "type": "Asset",
+        "createdAt": "2024-07-31T19:08:41.440Z",
+        "updatedAt": "2024-07-31T19:10:52.027Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 7,
+        "publishedAt": "2024-07-31T19:10:52.027Z",
+        "firstPublishedAt": "2024-07-31T19:10:52.027Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 8,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/assets/2TSrffuJi1qxi2AgO1KAMi"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Ziyarat of H. Abbas (sa) "
+        },
+        "file": {
+          "en-US": {
+            "url": "//videos.ctfassets.net/y9mxmxr8hqnq/2TSrffuJi1qxi2AgO1KAMi/dce2a39ffae3a0308435e9adf61f8178/_____________________________________________-_Ziyarat_Abbas_-_________________.mp4",
+            "details": {
+              "size": 19842459
+            },
+            "fileName": "زیارت حضرت عباس (ع) «نگارش آسان» (شیخ_زاده) - Ziyarat Abbas - زيارة العباس (ع).mp4",
+            "contentType": "video/mp4"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "01iqgBAtwI2enYjvNczywK",
+        "type": "Asset",
+        "createdAt": "2024-09-06T11:50:29.275Z",
+        "updatedAt": "2024-09-06T11:55:48.565Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 8,
+        "publishedAt": "2024-09-06T11:55:48.565Z",
+        "firstPublishedAt": "2024-09-06T11:55:48.565Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 9,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/assets/01iqgBAtwI2enYjvNczywK"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Ziyarate Arbaeen"
+        },
+        "file": {
+          "en-US": {
+            "url": "//videos.ctfassets.net/y9mxmxr8hqnq/01iqgBAtwI2enYjvNczywK/57c869813960432daff24fbf8bf1346e/___________________________-______________-_Ziyarat_Arbaeen_-________________.mp4",
+            "details": {
+              "size": 25314468
+            },
+            "fileName": "زیارت اربعین «نگارش آسان» - صوت_ سماواتی - Ziyarat Arbaeen - زيارة الأربعین.mp4",
+            "contentType": "video/mp4"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "6mhquRniVHrgsnvZAuctSD",
+        "type": "Asset",
+        "createdAt": "2025-12-05T11:53:20.205Z",
+        "updatedAt": "2025-12-05T11:53:48.493Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2025-12-05T11:53:48.493Z",
+        "firstPublishedAt": "2025-12-05T11:53:48.493Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/assets/6mhquRniVHrgsnvZAuctSD"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Ziyarat Ashura"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/y9mxmxr8hqnq/6mhquRniVHrgsnvZAuctSD/ce4ee2b97f4d0e7c4cf92c74476fb584/ktp0g3h55agptloqt58uihm7ko.png",
+            "details": {
+              "size": 172509,
+              "image": {
+                "width": 512,
+                "height": 512
+              }
+            },
+            "fileName": "ktp0g3h55agptloqt58uihm7ko.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "19UC8vExWOWeAtjylGmYfJ",
+        "type": "Asset",
+        "createdAt": "2025-12-05T11:56:13.036Z",
+        "updatedAt": "2025-12-05T11:56:44.984Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2025-12-05T11:56:44.984Z",
+        "firstPublishedAt": "2025-12-05T11:56:44.984Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/assets/19UC8vExWOWeAtjylGmYfJ"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Ziyarat Waritha"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/y9mxmxr8hqnq/19UC8vExWOWeAtjylGmYfJ/94ee186abedf640008a5ad0b6e07bc4a/unnamed.png",
+            "details": {
+              "size": 109043,
+              "image": {
+                "width": 512,
+                "height": 512
+              }
+            },
+            "fileName": "unnamed.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "id": "2CD7JhHfARhGs1zqKWxKHx",
+        "type": "Asset",
+        "createdAt": "2025-12-05T12:32:55.858Z",
+        "updatedAt": "2025-12-05T12:33:10.802Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2025-12-05T12:33:10.802Z",
+        "firstPublishedAt": "2025-12-05T12:33:10.802Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/y9mxmxr8hqnq/environments/master/assets/2CD7JhHfARhGs1zqKWxKHx"
+      },
+      "fields": {
+        "title": {
+          "en-US": "channel win"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/y9mxmxr8hqnq/2CD7JhHfARhGs1zqKWxKHx/80504e82267e0b7e7d6f7e67c1e96ec9/win.png",
+            "details": {
+              "size": 285082,
+              "image": {
+                "width": 512,
+                "height": 512
+              }
+            },
+            "fileName": "win.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    }
+  ],
+  "locales": [
+    {
+      "name": "English (United States)",
+      "code": "en-US",
+      "fallbackCode": null,
+      "default": true,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": false,
+      "sys": {
+        "type": "Locale",
+        "id": "3Vil5rhVjLzvfhVhTdTtbQ",
+        "version": 1,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "environment": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Environment",
+            "id": "master",
+            "uuid": "e96fb596-4188-44f0-8de0-5670e1287962"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "createdAt": "2024-06-20T09:36:32Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedAt": "2024-06-20T09:36:32Z"
+      }
+    }
+  ],
+  "webhooks": [
+  ],
+  "roles": [
+    {
+      "name": "Author",
+      "description": "Allows editing of content",
+      "policies": [
+        {
+          "effect": "allow",
+          "actions": [
+            "create"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "read"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "update"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "create"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "read"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "update"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "permissions": {
+        "ContentModel": [
+          "read"
+        ],
+        "Settings": [
+        ],
+        "ContentDelivery": [
+        ],
+        "Environments": [
+        ],
+        "EnvironmentAliases": [
+        ],
+        "Tags": [
+        ]
+      },
+      "sys": {
+        "type": "Role",
+        "id": "3VL67xYhmZ0aT5R0Uxu5HI",
+        "version": 0,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "createdAt": "2024-06-20T09:36:33Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedAt": "2024-06-20T09:36:33Z"
+      }
+    },
+    {
+      "name": "Editor",
+      "description": "Allows editing, publishing and archiving of content",
+      "policies": [
+        {
+          "effect": "allow",
+          "actions": "all",
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": "all",
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "permissions": {
+        "ContentModel": [
+          "read"
+        ],
+        "Settings": [
+        ],
+        "ContentDelivery": [
+        ],
+        "Environments": [
+        ],
+        "EnvironmentAliases": [
+        ],
+        "Tags": [
+        ]
+      },
+      "sys": {
+        "type": "Role",
+        "id": "3VLwV2ZYRltrVK6Ze4AV3c",
+        "version": 0,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "createdAt": "2024-06-20T09:36:33Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedAt": "2024-06-20T09:36:33Z"
+      }
+    },
+    {
+      "name": "Translator",
+      "description": "Allows editing of localized fields in the specified language",
+      "policies": [
+        {
+          "effect": "allow",
+          "actions": [
+            "read"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "read"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "update"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              },
+              {
+                "paths": [
+                  {
+                    "doc": "fields.%.%"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "update"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              },
+              {
+                "paths": [
+                  {
+                    "doc": "fields.%.%"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "permissions": {
+        "ContentModel": [
+          "read"
+        ],
+        "Settings": [
+        ],
+        "ContentDelivery": [
+        ],
+        "Environments": [
+        ],
+        "EnvironmentAliases": [
+        ],
+        "Tags": [
+        ]
+      },
+      "sys": {
+        "type": "Role",
+        "id": "3VLUsxJ7peAdtalUHMo33A",
+        "version": 0,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "y9mxmxr8hqnq"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "createdAt": "2024-06-20T09:36:33Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3DA0KsidqyLcF3Vyy12MHZ"
+          }
+        },
+        "updatedAt": "2024-06-20T09:36:33Z"
+      }
+    }
+  ]
+}
