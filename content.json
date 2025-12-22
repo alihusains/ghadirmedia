@@ -2809,7 +2809,7 @@
         "id": "6eLrtnUMfwuqjlcVxVmd6P",
         "type": "Entry",
         "createdAt": "2025-12-05T12:25:05.133Z",
-        "updatedAt": "2025-12-05T12:26:17.699Z",
+        "updatedAt": "2025-12-22T14:19:57.334Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -2817,8 +2817,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 4,
-        "publishedAt": "2025-12-05T12:26:17.699Z",
+        "publishedVersion": 7,
+        "publishedAt": "2025-12-22T14:19:51.709Z",
         "firstPublishedAt": "2025-12-05T12:26:17.699Z",
         "createdBy": {
           "sys": {
@@ -2834,8 +2834,8 @@
             "id": "3DA0KsidqyLcF3Vyy12MHZ"
           }
         },
-        "publishedCounter": 1,
-        "version": 5,
+        "publishedCounter": 2,
+        "version": 9,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -2845,7 +2845,7 @@
         },
         "fieldStatus": {
           "*": {
-            "en-US": "published"
+            "en-US": "changed"
           }
         },
         "automationTags": [
@@ -2872,14 +2872,14 @@
               "sys": {
                 "type": "Link",
                 "linkType": "Entry",
-                "id": "5FmHjuJDiGOrheVbJoLRta"
+                "id": "3zzSYr6GQ8w7pf8X7PFpwv"
               }
             },
             {
               "sys": {
                 "type": "Link",
                 "linkType": "Entry",
-                "id": "3zzSYr6GQ8w7pf8X7PFpwv"
+                "id": "5FmHjuJDiGOrheVbJoLRta"
               }
             }
           ]
