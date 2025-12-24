@@ -2809,7 +2809,7 @@
         "id": "6eLrtnUMfwuqjlcVxVmd6P",
         "type": "Entry",
         "createdAt": "2025-12-05T12:25:05.133Z",
-        "updatedAt": "2025-12-22T14:19:57.334Z",
+        "updatedAt": "2025-12-24T18:26:16.121Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -2835,7 +2835,7 @@
           }
         },
         "publishedCounter": 2,
-        "version": 9,
+        "version": 10,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -2880,6 +2880,13 @@
                 "type": "Link",
                 "linkType": "Entry",
                 "id": "5FmHjuJDiGOrheVbJoLRta"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "22hvzl42510iDks6vAyU2N"
               }
             }
           ]
